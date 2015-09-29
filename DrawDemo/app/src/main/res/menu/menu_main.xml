@@ -1,6 +1,48 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:title="@string/color">
+        <menu>
+            <!--定义一组单选菜单-->
+            <group android:checkableBehavior="single">
+                <!--定义子菜单-->
+                <item
+                    android:id="@+id/red"
+                    android:title="@string/color_red"/>
+                <item
+                    android:id="@+id/green"
+                    android:title="@string/color_green"/>
+                <item
+                    android:id="@+id/blue"
+                    android:title="@string/color_blue"/>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/width">
+        <menu>
+            <!--定义子菜单-->
+            <group>
+                <item
+                    android:id="@+id/width_1"
+                    android:title="@string/width_1"/>
+                <item
+                    android:id="@+id/width_2"
+                    android:title="@string/width_2"/>
+                <item
+                    android:id="@+id/width_3"
+                    android:title="@string/width_3"/>
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/clear"
+        android:title="@string/clear"/>
+    <item
+        android:id="@+id/save"
+        android:title="@string/save"/>
+
 </menu>
