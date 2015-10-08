@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DrawDemo</string>
+    <string name="app_name">画板</string>
     <string name="action_settings">Settings</string>
     <string name="width_1">1像素</string>
     <string name="width_2">5像素</string>
@@ -11,4 +11,7 @@
     <string name="width">画笔宽度</string>
     <string name="clear">擦除绘画</string>
     <string name="save">保存绘画</string>
+    <string name="title_activity_test">TestActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>

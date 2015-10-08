@@ -1,15 +1,20 @@
 package com.xuyihao.drawdemo;
 
+import android.app.ActionBar;
+import android.app.Activity;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.internal.view.SupportMenuInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    DrawView dv;
+    private DrawView dv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +28,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        MenuInflater inflater = new MenuInflater(this);//实例化menuInflator对象
+        MenuInflater inflater = getMenuInflater();//实例化menuInflator对象
+        inflater=new SupportMenuInflater(this);
         inflater.inflate(R.menu.menu_main, menu);//解析菜单文件
-        return super.onCreateOptionsMenu(menu);
+        return true;//super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -38,34 +44,33 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         switch (id){
             case R.id.red:
-                this.dv.paint.setColor(Color.RED);
+                dv.paint.setColor(Color.RED);
                 item.setChecked(true);
                 break;
             case R.id.green:
-                this.dv.paint.setColor(Color.GREEN);
+                dv.paint.setColor(Color.GREEN);
                 item.setChecked(true);
                 break;
             case R.id.blue:
-                this.dv.paint.setColor(Color.BLUE);
+                dv.paint.setColor(Color.BLUE);
                 item.setChecked(true);
                 break;
             case R.id.width_1:
-                this.dv.paint.setStrokeWidth(1);
+                dv.paint.setStrokeWidth(1);
                 break;
             case R.id.width_2:
-                this.dv.paint.setStrokeWidth(5);
+                dv.paint.setStrokeWidth(5);
                 break;
             case R.id.width_3:
-                this.dv.paint.setStrokeWidth(10);
+                dv.paint.setStrokeWidth(10);
                 break;
             case R.id.clear:
-                this.dv.clear();
+                dv.clear();
                 break;
             case R.id.save:
-                this.dv.save();
+                dv.save();
                 break;
         }
-
 
         return true;
     }
